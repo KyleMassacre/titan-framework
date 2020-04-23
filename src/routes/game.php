@@ -6,7 +6,7 @@ Route::get('/', function() {
 
 Route::group([
     'prefix' => 'game',
-    'middleware' => ['auth', 'character_logged_in', 'character_alive']
+    'middleware' => ['auth', 'game']
 ], function () {
     Route::get('/', 'GameHomeController@index')->name('game.home');
     Route::get('banned', 'BanController@index')->name('userban.userbanned');

@@ -31,7 +31,6 @@ class BanUserServiceProvider extends ServiceProvider
         app()->bind(BanUser::class, function() {
             return new BanUser();
         });
-        $this->loadMiddleware();
     }
 
     /**
@@ -58,11 +57,6 @@ class BanUserServiceProvider extends ServiceProvider
     public function provides()
     {
         return [BanUser::class];
-    }
-
-    private function loadMiddleware()
-    {
-//        app('router')->pushMiddlewareToGroup('auth', PlayableNotBannedMiddleware::class);
     }
 
     private function validatorExtensions()
